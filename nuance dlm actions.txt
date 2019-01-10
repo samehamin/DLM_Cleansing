@@ -3,16 +3,16 @@ Today tasks
 done - Ask Nuance should we remove abbrevs from DLM or keep them
 done - Remove the of jewelery sample
 done - elife should be E Life
-- Tech should be technical 
-	- wait till we got confirmation should we expand it or leave it as is 
-- Numbers should be written out as words 
-- Spell checker to fix typos
-	- Check duplications with typos. such as (real-state or real state) may be we can use the spell checker
-- Alghandy should be Al Ghandy, seperate all Al from the estab name.
-- Remove Hi and any other stop words. review it
+done - Numbers should be written out as words 
+	done - Check the original data if it contains numbers
+done - Alghandy should be Al Ghandy, seperate all Al from the estab name.
+done - Email Nuance with all new rules added and for 10k
 - Review 10k Ar / En 
 	- Review other abbrev still there in the 10k ar/en (sgj, trdg)
-- Email Nuance with all new rules added and for 10k
+Pending - Tech should be technical 
+	- wait till we got confirmation should we expand it or leave it as is 
+Next - Spell checker to fix typos
+	- Check duplications with typos. such as (real-state or real state) may be we can use the spell checker
 
 
 9/1/19 actions

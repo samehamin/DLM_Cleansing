@@ -12,7 +12,7 @@ English:
 - Spell checker to fix typos.
 - Alghandy should be Al Ghandy, seperate all Al from the estab name.
 - Remove Hi and any other stop words. review it.
- 
+
 Arabic:
  
 1.	Diacritics for short vowels and doubled consonants should not be included

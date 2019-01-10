@@ -7,12 +7,12 @@ Created on Tue Jan  8 18:33:01 2019
 
 import pandas as pd
 import re
-#from num2words import num2words
+from num2words import num2words
 
 
 def pipeline_read_file(file = None, column = None):
     #df = pd.read_excel(file, encoding = 'utf-8')
-    df = pd.read_csv(file)
+    df = pd.read_csv(file, encoding = 'utf-8')
     return df
 
 def pipeline_remove_duplicates_empty(tokens):
@@ -22,7 +22,7 @@ def pipeline_remove_duplicates_empty(tokens):
     return tokens
 
 def pipeline_remove_specials_spaces(tokens):
-    tokens = [ re.sub("[^A-Za-z']+", ' ', str(token)) for  token in tokens]
+    tokens = [ re.sub("[^A-Za-z0-9']+", ' ', str(token)) for  token in tokens]
     #tokens = [token.strip() for  token in tokens if len(token.strip()) > 1]
     return tokens
 
@@ -43,16 +43,20 @@ def pipeline_remove_abbrev(tokens):
                    'corp', 'pub', 'fzd', 'psc', 'es', 'contr', 'estb', 'eqpt', 'bu', 'hh',
                    'dsoa', 'ghq', 'lcc', 'ent', 'exhb', 'serv', 'ink', 'dist', 'ab', 'kg',
                    'hq', 'cons', 'bv', 'tra', 'wll', 'svc', 'nd', 'ad', 'lle', 'caf', 'comp',
-                   'sal', 'slc', 'pdxb']
+                   'sal', 'slc', 'pdxb', 'trdg', 'trdgco', 'cowll', 'srl', 'coltd',
+                   'zllcf', 'mfg', 'jv', 'pjsc', 'wwl', 'ser', 'pmdc', 'lda',
+                   'dept', 'trllc', 'fzllc']
         token = ' '.join([w for w in str(token).split() if w.lower() not in abbrevs_wrong])
-              
+
         # expand abbreviations
         abbrev_expand = {
                 'dr': 'doctor', 'eng': 'engineer', 'shj': 'Sharjah', 'sh': 'sheikh',
                 'shk': 'sheikh', 'Intl': 'international', 'int': 'international', 
                 'govt': 'government', 'min': 'ministry', 'po': 'post office', 'maf': 'Majid Al Futtaim',
                 'tec': 'tech', 'st': 'saint', 'fuj': 'Al Fujairah', 'mr': 'mister',
-                'elife': 'E Life'
+                'elife': 'E Life', '&': 'and', '2nd': 'Second', 'GENL': 'general',
+                'hi': 'high',
+                'egov': 'E Gov'
                 }
         for word in token.split():
             if word.lower() in abbrev_expand:
@@ -72,8 +76,18 @@ def pipeline_remove_abbrev(tokens):
                         'cctv': 'CCTV', 'ndc': 'NDC', 'acme': 'ACME', 'tv': 'TV', 
                         'usb': 'UBS',
                         'gm': 'GM',
-                        'ne': 'NE'}
-        for word in token.split():        
+                        'ne': 'NE',
+                        'uae': 'UAE',
+                        'aed': 'AED',
+                        'ss': 'SS',
+                        'dhl': 'DHL', 
+                        'tnt': 'TNT', 
+                        'jw': 'JW',
+                        'ibm': 'IBM',
+                        'adcb': 'ADCB',
+                        'adib': 'ADIB'
+                        }
+        for word in token.split():
             if word.lower() in abbrevs_real:
                 token = token.replace(word, abbrevs_real[word.lower()])
 
@@ -84,39 +98,62 @@ def pipeline_remove_abbrev(tokens):
 
 def pipeline_convert_numbers(tokens):
     # TODO: convert numbers
-#    for i in range(len(tokens)):
-#        tmp_token = ''
-#        for w in tokens[i].split():
-#            if w.isnumeric():
-#                tmp_token += (num2words(int(w)) + ' ')
-#            else:
-#                tmp_token += (w + ' ')
-#        tokens[i] = tmp_token.strip()
+    for i in range(len(tokens)):
+        
+        tmp_token = ''
+        for w in tokens[i].split():
+            if w.isnumeric():
+                tmp_token += (num2words(int(w)) + ' ')
+            else:
+                tmp_token += (w + ' ')
+        tokens[i] = tmp_token.strip()
+
     return tokens
 
+def separate_al_char(tokens):
+    exclude_al = ['ali']
+    
+    for i in range(len(tokens)):
+        token = tokens[i]
+        
+    for word in token.split():
+        if word.lower() in arr:
+            word = ' '.join([ re.sub(r'^al+\w*', 'al ' + word[2:], word) ])
+
+        tokens[i] = token
+    return tokens
+        
+        
 
 def get_term_frequently(df):
     df = df['Entity Name'].str.split(expand=True).stack().value_counts()
     return df
 
 def export_to_excel(df):
-    writer = pd.ExcelWriter('dlm_english.xlsx')
-    df.to_excel(writer,'Sheet1')
-    writer.save()
+    df.to_csv('data\dlm_english_10_01_19_clean.csv', index = False)
+#    writer = pd.ExcelWriter('data\dlm_english_10_01_19_clean.xlsx')
+#    df.to_excel(writer,'Sheet1')
+#    writer.save()
 
 #=====================================================================    
 # pipeline Start
 #=====================================================================
 # read the file
-original_data = pipeline_read_file("dlm_english_10_01_19.csv")
+original_data = pipeline_read_file("data\dlm_english_10_01_19.csv")
 original_data.describe()
 
 tokens = original_data['Entity Name'].values
 
+# convert numbers to text
+tokens = pipeline_convert_numbers(tokens)
+
 # special charachters and spaces
 tokens = pipeline_remove_specials_spaces(tokens)
 
-# remove abbreviations
+# separate Al arabic char
+tokens = separate_al_char(tokens)
+
+# should be the last step - remove abbreviations 
 tokens = pipeline_remove_abbrev(tokens)
 
 # remove duplicates
