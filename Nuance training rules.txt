@@ -1,0 +1,51 @@
+﻿From Zaynab
+==============
+English:
+ 
+- Capitalize the pronoun “I” and other proper nouns
+- Do not capitalize the first word in a sentence unless it is “I” or a proper noun
+- Do not use any punctuation (except apostrophe; the use of hyphens in the MRec data is complicated and compensated for to some extent by the tokenizer, so it’s hard to given any general guidelines on hyphens)
+- For acronyms that are spoken as a spelled sequence (like IBM), transcribe these as a sequence of upper-case letters, with no punctuation or spaces (“IBM”)
+- For acronyms or abbreviations that are spoken as one or more words (like MB or Ltd.), simply do not use the acronym or abbreviation and write out the word or words in full (“megabytes”, “limited”)
+- For acronyms read as a word (NAFTA, NATO), it should be ok to write these in all caps as normal.
+- Numbers should be written out as words or sequences of words, not as digits or sequences of digits
+- Spell checker to fix typos.
+- Alghandy should be Al Ghandy, seperate all Al from the estab name.
+- Remove Hi and any other stop words. review it.
+ 
+Arabic:
+ 
+1.	Diacritics for short vowels and doubled consonants should not be included
+2.	Foreign words (like the “credit card” example that came up during the call) are best written in Arabic
+3.	Punctuation should not be used
+4.	Numbers should be written out as words or sequences of words, not as digits or sequences of digits
+5.	Acronyms consisting of letters of the Latin alphabet should be left that way (“IBM” should remain as “IBM”, without spaces, same for NATO, NAFTA, etc.)
+6.	Other abbreviations or acronyms that are spoken as actual words (like the “MB” spoken as “megabyte” example from yesterday) should be transcribed as the full word or words (in Arabic – in other words use “ميغا بايت” and not “MB”)  
+===============================================================
+
+From Clinton
+==============
+English:
+ 
+1.	Capitalize the pronoun “I” and other proper nouns
+2.	Do not capitalize the first word in a sentence unless it is “I” or a proper noun
+3.	Do not use any punctuation (except apostrophe; the use of hyphens in the MRec data is complicated and compensated for to some extent by the tokenizer, so it’s hard to given any general guidelines on hyphens)
+4.	Numbers should be written out as words or sequences of words, not as digits or sequences of digits
+5.	For acronyms that are spoken as a spelled sequence (like IBM), transcribe these as a sequence of upper-case letters, with no punctuation or spaces (“IBM”)
+6.	For acronyms or abbreviations that are spoken as one or more words (like MB or Ltd.), simply do not use the acronym or abbreviation and write out the word or words in full (“megabytes”, “limited”)
+7.	For acronyms read as a word (NAFTA, NATO), it should be ok to write these in all caps as normal.
+ 
+Arabic:
+ 
+1.	Diacritics for short vowels and doubled consonants should not be included
+2.	Foreign words (like the “credit card” example that came up during the call) are best written in Arabic
+3.	Punctuation should not be used
+4.	Numbers should be written out as words or sequences of words, not as digits or sequences of digits
+5.	Acronyms consisting of letters of the Latin alphabet should be left that way (“IBM” should remain as “IBM”, without spaces, same for NATO, NAFTA, etc.)
+6.	Other abbreviations or acronyms that are spoken as actual words (like the “MB” spoken as “megabyte” example from yesterday) should be transcribed as the full word or words (in Arabic – in other words use “ميغا بايت” and not “MB”)  
+===============================================================
+
+Arabic Findings
+- ذات مسئولية محدودة ....
+- other company abbreviations
+- 

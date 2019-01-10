@@ -1,0 +1,53 @@
+Today tasks
+=======================
+done - Ask Nuance should we remove abbrevs from DLM or keep them
+done - Remove the of jewelery sample
+done - elife should be E Life
+- Tech should be technical 
+	- wait till we got confirmation should we expand it or leave it as is 
+- Numbers should be written out as words 
+- Spell checker to fix typos
+	- Check duplications with typos. such as (real-state or real state) may be we can use the spell checker
+- Alghandy should be Al Ghandy, seperate all Al from the estab name.
+- Remove Hi and any other stop words. review it
+- Review 10k Ar / En 
+	- Review other abbrev still there in the 10k ar/en (sgj, trdg)
+- Email Nuance with all new rules added and for 10k
+
+
+9/1/19 actions
+=================
+done - Send Vocalizer issues to Morad
+done - Apply the received rules from Clinton on the sent Arabic DLM.
+done - Vocalizer deployment issue with Morad.
+done - Remove dots (.) and any other - dashes
+========================================================================
+
+10/1/19 actions
+=================
+- Batch 1 Cleansing (10k)
+- Share the cleaned and frequency information with Nuance
+========================================================================
+
+11/1/19 actions
+=================
+- Add the user responses to the training data
+========================================================================
+
+12/1/19 actions
+=================
+- Batch 2 Cleansing (10k)
+- Share the cleaned and frequency information with Nuance
+========================================================================
+
+14/1/19 actions
+=================
+- Batch 3 Cleansing (10k)
+- Share the cleaned and frequency information with Nuance
+========================================================================
+
+16/1/19 actions
+=================
+- Batch 3 Cleansing (10k)
+- Share the cleaned and frequency information with Nuance
+========================================================================
