@@ -45,18 +45,25 @@ def pipeline_remove_abbrev(tokens):
                    'hq', 'cons', 'bv', 'tra', 'wll', 'svc', 'nd', 'ad', 'lle', 'caf', 'comp',
                    'sal', 'slc', 'pdxb', 'trdg', 'trdgco', 'cowll', 'srl', 'coltd',
                    'zllcf', 'mfg', 'jv', 'pjsc', 'wwl', 'ser', 'pmdc', 'lda',
-                   'dept', 'trllc', 'fzllc']
+                   'dept', 'trllc', 'fzllc', 'collc', 'foodstuff', 'catering', 'indllc',
+                   'trdcoltd', 'trdgest', 'fzoc', 'ltdco', 'lllc', 'col', 'tradcollc', 
+                   'corpn', 'trdllc', 'trdest', 'indltd', 'llcc', 'equiptrest', 'contcollc', 
+                   'servicesllc', 'llcbr', 'ltdd', 'contllc', 'eastfze']
         token = ' '.join([w for w in str(token).split() if w.lower() not in abbrevs_wrong])
 
         # expand abbreviations
         abbrev_expand = {
-                'dr': 'doctor', 'eng': 'engineer', 'shj': 'Sharjah', 'sh': 'sheikh',
-                'shk': 'sheikh', 'Intl': 'international', 'int': 'international', 
-                'govt': 'government', 'min': 'ministry', 'po': 'post office', 'maf': 'Majid Al Futtaim',
-                'tec': 'tech', 'st': 'saint', 'fuj': 'Al Fujairah', 'mr': 'mister',
-                'elife': 'E Life', '&': 'and', '2nd': 'Second', 'GENL': 'general',
-                'hi': 'high',
-                'egov': 'E Gov'
+                'dr': 'Doctor', 'eng': 'Engineer', 'shj': 'Sharjah', 'sh': 'Sheikh',
+                'shk': 'Sheikh', 'intl': 'International',
+                'govt': 'Government', 'min': 'Ministry', 'po': 'Post Office', 
+                'maf': 'Majid Al Futtaim',
+                'tec': 'Technical', 'st': 'Saint', 'fuj': 'Al Fujairah', 'mr': 'Mister',
+                'elife': 'E Life', '&': 'and', '2nd': 'Second', 'GENL': 'General',
+                'hi': 'High',
+                'egov': 'E Government',
+                'govtof': 'Government of',
+                'maint': 'Maintenance',
+                'elect': 'electronic'
                 }
         for word in token.split():
             if word.lower() in abbrev_expand:
@@ -85,7 +92,9 @@ def pipeline_remove_abbrev(tokens):
                         'jw': 'JW',
                         'ibm': 'IBM',
                         'adcb': 'ADCB',
-                        'adib': 'ADIB'
+                        'adib': 'ADIB',
+                        'mbc': 'MBC',
+                        'itl': 'ITL'
                         }
         for word in token.split():
             if word.lower() in abbrevs_real:
@@ -117,7 +126,7 @@ def separate_al_char(tokens):
         token = tokens[i]
         
     for word in token.split():
-        if word.lower() in arr:
+        if word.lower() in exclude_al:
             word = ' '.join([ re.sub(r'^al+\w*', 'al ' + word[2:], word) ])
 
         tokens[i] = token
@@ -130,7 +139,7 @@ def get_term_frequently(df):
     return df
 
 def export_to_excel(df):
-    df.to_csv('data\dlm_english_10_01_19_clean.csv', index = False)
+    df.to_csv('data/dlm_english_10_01_19_v1_result.csv', index = False)
 #    writer = pd.ExcelWriter('data\dlm_english_10_01_19_clean.xlsx')
 #    df.to_excel(writer,'Sheet1')
 #    writer.save()
@@ -139,7 +148,7 @@ def export_to_excel(df):
 # pipeline Start
 #=====================================================================
 # read the file
-original_data = pipeline_read_file("data\dlm_english_10_01_19.csv")
+original_data = pipeline_read_file("data/dlm_english_10_01_19_v1.csv")
 original_data.describe()
 
 tokens = original_data['Entity Name'].values
