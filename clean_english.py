@@ -148,7 +148,7 @@ def export_to_file(exten, df, file_name):
     elif exten == 'csv':
         df.to_csv(file_name, encoding='utf-8', index=False)
 
-#=====================================================================    
+#===================================================================== 
 # pipeline Start
 #=====================================================================
 # read the file
@@ -180,3 +180,4 @@ df_term_freq = get_term_frequently(data)
 
 # write the file
 export_to_file('csv', data, 'data/dlm_12_01_19/dlm_en_12_01_19_v1_result.csv')
+
