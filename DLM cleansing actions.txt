@@ -1,0 +1,40 @@
+Today tasks
+=======================
+
+9/1/19 actions
+=================
+done - Send Vocalizer issues to Morad
+done - Apply the received rules from Clinton on the sent Arabic DLM.
+done - Vocalizer deployment issue with Morad.
+done - Remove dots (.) and any other - dashes
+========================================================================
+
+10/1/19 actions
+=================
+done - Arabic 10K
+done - English 10K
+========================================================================
+
+12/1/19 actions
+=================
+- Arabic 10K
+done - English 10K
+========================================================================
+
+13/1/19 actions
+=================
+done - Training file with utterances preprocessing
+========================================================================
+
+14/1/19 actions
+=================
+- Arabic 10K
+- English 10K
+- Share the cleaned and frequency information with Nuance
+========================================================================
+
+16/1/19 actions
+=================
+- Batch 3 Cleansing (10k)
+- Share the cleaned and frequency information with Nuance
+========================================================================

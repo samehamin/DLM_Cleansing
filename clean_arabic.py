@@ -8,8 +8,12 @@ Created on Tue Jan  8 18:33:01 2019
 import pandas as pd
 import re
 
-def pipeline_read_excel(file = None, column = None):
-    df = pd.read_csv(file, encoding = 'utf-8')
+def pipeline_read_file(exten, file = None, column = None):
+    df = None
+    if exten == 'csv':
+        df = pd.read_csv(file, encoding = 'utf-8')
+    elif exten == 'excel':
+        df = pd.read_excel(file, column, encoding = 'utf-8')
     return df
 
 def pipeline_remove_duplicates_empty(tokens):
@@ -43,21 +47,20 @@ def pipeline_remove_abbrev(tokens):
     
 def get_term_frequently(df):
     df = df['Entity Name'].str.split(expand=True).stack().value_counts()
-#    df = pd.DataFrame({'terms': df.index})
-#    s = df.terms.str.len().sort_values().index
-#    pipeline_remove_duplicates_empty(s)
-#    df = df.reindex(s)
     return df
 
-def export_to_excel(df):
-    writer = pd.ExcelWriter('dlm_arabic.xlsx')
-    df.to_excel(writer,'Sheet1')
-    writer.save()
-    
+def export_to_file(exten, df, file_name):
+    if exten == 'excel':
+        writer = pd.ExcelWriter(file_name)
+        df.to_excel(writer,'Sheet1')
+        writer.save()
+    elif exten == 'csv':
+        df.to_csv(file_name, encoding='utf-8', index=False)
+
 # pipeline Start
 
 # read the file
-data = pipeline_read_excel("training_set_all_dq_ar.xlsx")
+data = pipeline_read_file('csv', "data/dlm_12_01_19/12_01_19_source_ar.csv")
 data.describe()
 
 tokens = data['Entity Name'].values
@@ -79,4 +82,4 @@ data.head()
 df_term_freq = get_term_frequently(data)
 
 # write the file
-export_to_excel(data)
+export_to_file('csv', data, 'data/dlm_12_01_19/dlm_ar_12_01_19_v1_result.csv')

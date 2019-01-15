@@ -1,0 +1,57 @@
+Zaynab - Issues - 12/1
+=======================================
+Mok Corporation -> MOK Corporation General Trading L.L.C
+
+Ahalia Regional Medical Center -> Al Ahlia Regional Medical Centre
+
+Quick Fast Mobiles  -> Quick and Fast Mobile Trading L.L.C
+
+Eta Group -> ETA Group
+
+Just Nazo
+
+Al Khayyam Furnishing -> Al Khayyam Furnishing Company L.L.C
+
+Dubai Fei Da -> Dubai Fei Da Trading
+
+Ao
+
+Al Kamal Shampoo Cleaning Mat
+
+My Phone
+
+Apex Of Gulf -> Apex Of Gulf FZE
+
+Csi Parish Dubai
+
+Cmc Networks Middle East
+
+Al Qastas Automantwshop
+
+Banque Diamantaire Suisse Diamond Bank Switzerland
+
+Watelseal Insulation Mot
+
+Alnaser Cafeteria Restaurant
+
+Alhana
+
+Esnaad Adnoc Group -> Adnoc logistics Esnaad
+
+Dala
+
+Mazrui Hawi Painting -> Mazrui Hawi Painting Co. W.L.L.
+
+Khaled Ahmed Foodstuff -> Khalid Ahmed Faudeh General Trading
+
+========================================================================================================
+
+Zaynab - Issues - 13/1
+=======================================
+
+Cases like: ‘Co.’ should be ‘Company’
+  *   Cases like: Just Nazo, Ao, Dala, My Phone – we should remove them but if we know the correct establishment name replace them.
+  *   Cases like: Al Kamal Shampoo Cleaning Mat should be : Al Kamal Shampoo and Cleaning Material
+  *   Cases like: Cmc Networks Middle East – we should capitalize the beginning --> CMC Networks
+  *   Cases like: Al Qastas Automantwshop - Al Qasas Automant Shop / spaces to be added after the establishment name.
+  *   Cases like: Jumaira Beach Saloon – Jumeirah Beach Saloon --> attention to locality misspelling. 
