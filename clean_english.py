@@ -48,7 +48,8 @@ def pipeline_remove_abbrev(tokens):
                    'dept', 'trllc', 'fzllc', 'collc', 'foodstuff', 'catering', 'indllc',
                    'trdcoltd', 'trdgest', 'fzoc', 'ltdco', 'lllc', 'col', 'tradcollc', 
                    'corpn', 'trdllc', 'trdest', 'indltd', 'llcc', 'equiptrest', 'contcollc', 
-                   'servicesllc', 'llcbr', 'ltdd', 'contllc', 'eastfze']
+                   'servicesllc', 'llcbr', 'ltdd', 'contllc', 'eastfze', 'llco', 'lll',
+                   'icd', 'tradg', 'fzer']
         token = ' '.join([w for w in str(token).split() if w.lower() not in abbrevs_wrong])
 
         # expand abbreviations
@@ -63,7 +64,9 @@ def pipeline_remove_abbrev(tokens):
                 'egov': 'E Government',
                 'govtof': 'Government of',
                 'maint': 'Maintenance',
-                'elect': 'electronic'
+                'mant': 'Maintenance',
+                'elect': 'electronic', 
+                'ajm': 'Ajman'
                 }
         for word in token.split():
             if word.lower() in abbrev_expand:
@@ -94,7 +97,7 @@ def pipeline_remove_abbrev(tokens):
                         'adcb': 'ADCB',
                         'adib': 'ADIB',
                         'mbc': 'MBC',
-                        'itl': 'ITL'
+                        'itl': 'ITL', 'dib': 'DIB', 'att': 'AT and T'
                         }
         for word in token.split():
             if word.lower() in abbrevs_real:
@@ -120,36 +123,36 @@ def pipeline_convert_numbers(tokens):
     return tokens
 
 def separate_al_char(tokens):
-    exclude_al = ['ali']
+    exclude_al = ['ali', 'al', 'alarm', 'alia']
     
     for i in range(len(tokens)):
         token = tokens[i]
-        
-    for word in token.split():
-        if word.lower() in exclude_al:
-            word = ' '.join([ re.sub(r'^al+\w*', 'al ' + word[2:], word) ])
+
+        for word in token.split():
+            if word.lower() not in exclude_al:
+                word_temp = re.sub(r'^al+\w*', 'al ' + str(word[2:]), word.lower())
+                token = token.replace(word, word_temp)
 
         tokens[i] = token
     return tokens
-        
-        
 
 def get_term_frequently(df):
     df = df['Entity Name'].str.split(expand=True).stack().value_counts()
     return df
 
-def export_to_excel(df):
-    df.to_csv('data/dlm_english_10_01_19_v1_result.csv', index = False)
-#    writer = pd.ExcelWriter('data\dlm_english_10_01_19_clean.xlsx')
-#    df.to_excel(writer,'Sheet1')
-#    writer.save()
+def export_to_file(exten, df, file_name):
+    if exten == 'excel':
+        writer = pd.ExcelWriter(file_name)
+        df.to_excel(writer,'Sheet1')
+        writer.save()
+    elif exten == 'csv':
+        df.to_csv(file_name, encoding='utf-8', index=False)
 
 #=====================================================================    
 # pipeline Start
 #=====================================================================
 # read the file
-original_data = pipeline_read_file("data/dlm_english_10_01_19_v1.csv")
-original_data.describe()
+original_data = pipeline_read_file("data/dlm_12_01_19/12_01_19_source_en.csv")
 
 tokens = original_data['Entity Name'].values
 
@@ -176,4 +179,4 @@ data.head()
 df_term_freq = get_term_frequently(data)
 
 # write the file
-export_to_excel(data)
+export_to_file('csv', data, 'data/dlm_12_01_19/dlm_en_12_01_19_v1_result.csv')
