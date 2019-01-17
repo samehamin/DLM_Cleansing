@@ -49,61 +49,12 @@ def pipeline_remove_abbrev(tokens):
                    'trdcoltd', 'trdgest', 'fzoc', 'ltdco', 'lllc', 'col', 'tradcollc', 
                    'corpn', 'trdllc', 'trdest', 'indltd', 'llcc', 'equiptrest', 'contcollc', 
                    'servicesllc', 'llcbr', 'ltdd', 'contllc', 'eastfze', 'llco', 'lll',
-                   'icd', 'tradg', 'fzer', 'sgj', 'llcons', 'bldconco']
+                   'icd', 'tradg', 'fzer', 'sgj', 'llcons', 'bldconco', 'jlt',
+                   'jafza']
         token = ' '.join([w for w in str(token).split() if w.lower() not in abbrevs_wrong])
 
-        # expand abbreviations
-#        abbrev_expand = {
-#                'dr': 'Doctor', 'eng': 'Engineer', 'shj': 'Sharjah', 'sh': 'Sheikh',
-#                'shk': 'Sheikh', 'intl': 'International',
-#                'govt': 'Government', 'min': 'Ministry', 'po': 'Post Office', 
-#                'maf': 'Majid Al Futtaim',
-#                'tec': 'Technical', 'st': 'Saint', 'fuj': 'Al Fujairah', 'mr': 'Mister',
-#                'elife': 'E Life', '&': 'and', '2nd': 'Second', 'GENL': 'General',
-#                'hi': 'High',
-#                'egov': 'E Government',
-#                'govtof': 'Government of',
-#                'maint': 'Maintenance',
-#                'mant': 'Maintenance',
-#                'elect': 'Electronic', 
-#                'ajm': 'Ajman',
-#                'rak': 'Ras Al Khaimah',
-#                'uaq': 'Umm Al Quwain',
-#                'equip': 'Equipment',
-#                'mat': 'material'
-#                }
-#        for word in token.split():
-#            if word.lower() in abbrev_expand:
-#                token = ' '.join([ re.sub(word, abbrev_expand[word.lower()], word)])
-#        
         # capitalize token
         token = ' '.join( [word.capitalize() for word in token.lower().split()] )
-#        token = token.lower()
-#        token = token.capitalize()
-        
-        # Exclude real abbreviations
-#        abbrevs_real = { 'i': 'I', 'kfc':'KFC', 'it': 'IT', 'atm': 'ATM', 
-#                        'jlt': 'JLT', 'id': 'ID', 'smb': 'SMB', 'dxb': 'DXB', 
-#                        'auh': 'AUH', 'uk': 'UK', 'sas': 'SAS', 'vip': 'VIP', 
-#                        'hr': 'HR', 'us': 'US', 'usa': 'USA', 'ip': 'IP', 'sms': 'SMS', 
-#                        'sim': 'SIM', 'vpn': 'VPN', 'fab': 'FAB', 'fgb': 'FGB', 
-#                        'cctv': 'CCTV', 'ndc': 'NDC', 'acme': 'ACME', 'tv': 'TV', 
-#                        'usb': 'UBS',
-#                        'gm': 'GM',
-#                        'ne': 'NE',
-#                        'uae': 'UAE',
-#                        'aed': 'AED',
-#                        'ss': 'SS',
-#                        'dhl': 'DHL', 
-#                        'tnt': 'TNT', 
-#                        'jw': 'JW',
-#                        'ibm': 'IBM',
-#                        'adcb': 'ADCB',
-#                        'adib': 'ADIB',
-#                        'mbc': 'MBC',
-#                        'itl': 'ITL', 'dib': 'DIB', 'att': 'AT and T',
-#                        'bmw': 'BMW'
-#                        }
         
         # Load the abbrev dict
         with open('data/abbrev_dict.csv', 'r') as document:
@@ -120,6 +71,14 @@ def pipeline_remove_abbrev(tokens):
                     token = token.replace(word, abbrev)
     
         tokens[i] = token
+
+    # remove Branches
+    tokens = [re.sub(r"(Dubai Branch).*$", ' ', token) for token in tokens]
+    tokens = [re.sub(r"(Fujairah Branch).*$", ' ', token) for token in tokens]
+    tokens = [re.sub(r"(Ras Al Khaimah Branch).*$", ' ', token) for token in tokens]
+    tokens = [re.sub(r"(Sharjah Branch).*$", ' ', token) for token in tokens]
+    tokens = [re.sub(r"(Branch).*$", ' ', token) for token in tokens]
+    tokens = [re.sub(r"\s+(Middle East)\s+$", ' ', token) for token in tokens]
 
     return tokens
 
@@ -166,7 +125,7 @@ def export_to_file(exten, df, file_name):
 #=====================================================================    
 # pipeline Start
 #=====================================================================
-source_file_name = 'dlm_english_10_01_19_v3.csv'
+source_file_name = '16_01_19_source_en.csv'
 
 # read the file
 original_data = pipeline_read_file(source_file_name)

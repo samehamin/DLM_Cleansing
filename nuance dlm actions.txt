@@ -1,12 +1,19 @@
 Today tasks
 =======================
 DLM 
-	done - Apply Clinton and Zaynab fixes to batch 1
-	- Batch 3 10K ar/en today
-	- share the whole file with Clinton
-	- New rule: if branch is the last word, remove it.
-	- New rule: Digits (G2 => G two)
+	- Batch 3,4,5 40K EN today
+	- Share the whole file with Clinton - Islam will take care
+	- New rules
+		done - Remove “Branch One” etc. You can use the regex “ (Branch).*$ ”
+		done - Remove “Dubai Branch” etc
+		done - Remove “Jafza”, “JLT”
+		done - Remove “Middle East” from the end of sentence regex “ \s+Middle East\s+$”
+		done - Engg -> Engineering
+		done - New rule: if branch is the last word, remove it.
+		New rule: Digits (G2 => G two)
 	- Add the 1000 to DLM
+	done - Apply Clinton and Zaynab fixes to batch 1
+	done - Batch 3,4,5 40K ar today
 
 9/1/19 actions
 =================
