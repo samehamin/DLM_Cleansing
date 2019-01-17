@@ -159,7 +159,8 @@ Grocere, Grocery
 Gs, GS
 H2, H two
 Hfc, HFC
-Hhsh, His Highness Sheikh
+Hhsh, Sheikh
+Sukhm, Sheikh
 Hlb, HLB
 Hpr, HPR
 Hrm, HRM
@@ -263,11 +264,11 @@ Servest, Services Establishment
 Sgb, SGB
 Sgs, SGS
 Singaportgulf, Singapore Gulf
-Supar, Supar + Market = Supermarket
+Supar Market, Supermarket
 Supermarkt, Supermarket
 Supplest, Supplies
 Surge, Surgery
-Surgi (Surgi + Tech, Surgitech)
+Surgi, Surgitech
 Svcs, Services
 Tail, Tailoring
 Tailaring, Tailoring
@@ -367,9 +368,12 @@ shk, Sheikh
 intl, International
 govt, Government
 min, Ministry
+mins, Ministry
+minst, Ministry
 po, Post Office
 maf, Majid Al Futtaim
 tec, Technical
+tech, Technical
 st, Saint
 fuj, Al Fujairah
 mr, Mister
@@ -387,5 +391,76 @@ ajm, Ajman
 rak, Ras Al Khaimah
 uaq, Umm Al Quwain
 equip, Equipment
-mat, material
+mat, Material
 engg, Engineering
+ogs, OGS
+me, Middle East
+gsm, GSM
+acar, a Car
+abudhabi, Abu Dhabi
+auth, Authority
+jk, JK
+icb, ICB
+bam, BAM
+ssi, SSI
+Jewellry, Jewelry
+rmb, RMB
+DCAS, DCAS
+Equipments, Equipments
+SBJ, SBJ
+Gtech, G Tech
+FG, FG
+BH, BH
+NS,NS
+KSK,KSK
+ADC,ADC
+JMN,JMN
+TGP,TGP
+MKA,MKA
+SK,SK
+Transort,Transportation
+LAL,LAL
+ZF,ZF
+AKS,AKS
+RNR,RNR
+NBD,NBD
+POS,POS
+COSL,COSL
+Butec, BU Tech
+STG,STG
+LYF,LYF
+VVG,VVG
+TNL,TNL
+Ostep, O Step
+SOC, SOC
+Managment,Management
+IMBA,IMBA
+XYZ,XYZ
+TKD,TKD
+NME,NME
+ZS,ZS
+FHK,FHK
+ABS,ABS
+PHR,PHR
+MSV,MSV
+NMDC,NMDC
+QIG,QIG
+MOI,MOI
+MPLS,MPLS
+ECS,ECS
+VVF,VVF
+AQME,AQME
+DLL,DLL
+CMS,CMS
+GIQC,GIQC
+GWP,GWP
+AFC,AFC
+RSH,RSH
+RWL,RWL
+LXE,LXE
+AIM,AIM
+ROC,ROC
+FKG,FKG
+MGC,MGC
+CRC,CRC
+Vtec, V Tech

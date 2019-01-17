@@ -50,7 +50,7 @@ def pipeline_remove_abbrev(tokens):
                    'corpn', 'trdllc', 'trdest', 'indltd', 'llcc', 'equiptrest', 'contcollc', 
                    'servicesllc', 'llcbr', 'ltdd', 'contllc', 'eastfze', 'llco', 'lll',
                    'icd', 'tradg', 'fzer', 'sgj', 'llcons', 'bldconco', 'jlt',
-                   'jafza']
+                   'jafza', 'tradin']
         token = ' '.join([w for w in str(token).split() if w.lower() not in abbrevs_wrong])
 
         # capitalize token
@@ -73,12 +73,26 @@ def pipeline_remove_abbrev(tokens):
         tokens[i] = token
 
     # remove Branches
-    tokens = [re.sub(r"(Dubai Branch).*$", ' ', token) for token in tokens]
-    tokens = [re.sub(r"(Fujairah Branch).*$", ' ', token) for token in tokens]
-    tokens = [re.sub(r"(Ras Al Khaimah Branch).*$", ' ', token) for token in tokens]
-    tokens = [re.sub(r"(Sharjah Branch).*$", ' ', token) for token in tokens]
+    tokens = [re.sub(r"(Dubai Branch).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Owned By).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Fujairah Branch).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Ras Al Khaimah Branch).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Sharjah Branch).*$", '', token) for token in tokens]
     tokens = [re.sub(r"(Branch).*$", ' ', token) for token in tokens]
-    tokens = [re.sub(r"\s+(Middle East)\s+$", ' ', token) for token in tokens]
+    tokens = [re.sub(r"(Middle East)$", '', token) for token in tokens]
+    tokens = [re.sub(r"(General Trading).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Trading).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(General Maintenance)\s*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Engineering Consultancy)\s*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Exhibition Organizing)\s*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(One Person Company)\s*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Management Services)\s*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(And).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Dubai).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Abu Dhabi).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Sharjah).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(Ajman).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"(DIB ATM).*$", '', token) for token in tokens]
 
     return tokens
 
@@ -97,7 +111,8 @@ def pipeline_convert_numbers(tokens):
     return tokens
 
 def separate_al_char(tokens):
-    exclude_al = ['ali', 'al', 'alarm', 'alia']
+    exclude_al = ['ali', 'al', 'alarm', 'alia', 'alwan', 'aluminum', 'alaaeldin',
+                  'alpha', 'allsa', 'almas', 'alif']
     
     for i in range(len(tokens)):
         token = tokens[i]
