@@ -11,9 +11,9 @@ import re
 def pipeline_read_file(exten, file = None, column = None):
     df = None
     if exten == 'csv':
-        df = pd.read_csv(file, encoding = 'utf-8')
+        df = pd.read_csv('data/' + file, encoding = 'utf-8')
     elif exten == 'excel':
-        df = pd.read_excel(file, column, encoding = 'utf-8')
+        df = pd.read_excel('data/' + file, column, encoding = 'utf-8')
     return df
 
 def pipeline_remove_duplicates_empty(tokens):
@@ -41,6 +41,10 @@ def pipeline_remove_abbrev(tokens):
         token = re.sub(" م ", ' ', token)
         token = re.sub(" ار ", ' ', token)
         token = re.sub(" هه ", ' ', token)
+        token = re.sub(" ش ذ م م ", ' ', token)
+        token = re.sub(" ش م ذ ", ' ', token)
+        token = re.sub(" ذ م م ", ' ', token)
+        
         tokens[i] = token
 
     return tokens
@@ -57,10 +61,13 @@ def export_to_file(exten, df, file_name):
     elif exten == 'csv':
         df.to_csv(file_name, encoding='utf-8', index=False)
 
+#=====================================================================    
 # pipeline Start
+#=====================================================================
+source_file_name = '16_01_19_source_ar.csv'
 
 # read the file
-data = pipeline_read_file('csv', "data/dlm_12_01_19/12_01_19_source_ar.csv")
+data = pipeline_read_file('csv', source_file_name)
 data.describe()
 
 tokens = data['Entity Name'].values
@@ -82,4 +89,4 @@ data.head()
 df_term_freq = get_term_frequently(data)
 
 # write the file
-export_to_file('csv', data, 'data/dlm_12_01_19/dlm_ar_12_01_19_v1_result.csv')
+export_to_file('csv', data, 'output/output_' + source_file_name)

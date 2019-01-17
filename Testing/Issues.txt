@@ -1,29 +1,27 @@
-Clinton - Issues - 15/1
+done Clinton - Issues - 15/1
 =======================================
-- RAK = Ras Al Khaimah
-- UAQ = Umm Al Quwain
-if branch is the last word, remove it.
-Llcons remove
+done - RAK = Ras Al Khaimah
+done - UAQ = Umm Al Quwain
+done Llcons remove
 
-1.  Partial words (Equip, Cos, Bros, etc.)
-  2.  2-, 3- or 4-letter words with no vowels (Bmw => BMW)
-  3.  Some potentially ambiguous but common cases (like Me => Middle East)
-  4.  Digits (G2 => G two)
-  5.  Obvious typos (Physiotheraphy)
+done 1.  Partial words (Equip, Cos, Bros, etc.)
+done  2.  2-, 3- or 4-letter words with no vowels (Bmw => BMW)
+done  3.  Some potentially ambiguous but common cases (like Me => Middle East)
+done   4.  Digits (G2 => G two)
+done  5.  Obvious typos (Physiotheraphy)
 
-- Review batch one corrections - create abbrev dictionary
 ========================================================================================================
 
 
-Zaynab - Issues - 13/1
+done Zaynab - Issues - 13/1
 =======================================
 
-Cases like: ‘Co.’ should be ‘Company’
-  *   Cases like: Just Nazo, Ao, Dala, My Phone – we should remove them but if we know the correct establishment name replace them.
-  *   Cases like: Al Kamal Shampoo Cleaning Mat should be : Al Kamal Shampoo and Cleaning Material
-  *   Cases like: Cmc Networks Middle East – we should capitalize the beginning --> CMC Networks
-  *   Cases like: Al Qastas Automantwshop - Al Qasas Automant Shop / spaces to be added after the establishment name.
-  *   Cases like: Jumaira Beach Saloon – Jumeirah Beach Saloon --> attention to locality misspelling. 
+done Cases like: ‘Co.’ should be ‘Company’
+done   *   Cases like: Just Nazo, Ao, Dala, My Phone – we should remove them but if we know the correct establishment name replace them.
+done  *   Cases like: Al Kamal Shampoo Cleaning Mat should be : Al Kamal Shampoo and Cleaning Material
+done  *   Cases like: Cmc Networks Middle East – we should capitalize the beginning --> CMC Networks
+done  *   Cases like: Al Qastas Automantwshop - Al Qasas Automant Shop / spaces to be added after the establishment name.
+done  *   Cases like: Jumaira Beach Saloon – Jumeirah Beach Saloon --> attention to locality misspelling. 
 
 ========================================================================================================
 
