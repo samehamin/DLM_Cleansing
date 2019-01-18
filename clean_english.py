@@ -112,7 +112,8 @@ def pipeline_convert_numbers(tokens):
 
 def separate_al_char(tokens):
     exclude_al = ['ali', 'al', 'alarm', 'alia', 'alwan', 'aluminum', 'alaaeldin',
-                  'alpha', 'allsa', 'almas', 'alif']
+                  'alpha', 'allsa', 'almas', 'alif', 'almco', 'almamun', 'alam',
+                  'almiya', 'alexandriah', 'alfiah']
     
     for i in range(len(tokens)):
         token = tokens[i]

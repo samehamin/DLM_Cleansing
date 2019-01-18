@@ -111,6 +111,7 @@ Elctrcl, Electrical
 Ele, Electrical
 Elec, Electronics
 Elecmachw, Electrical and Mechanical Works
+Mech, Mechanical
 Elect, Electrical
 Electequipment, Electrical Equipment
 Electequipt, Electrical Equipment
@@ -178,6 +179,7 @@ Inst, Installation
 Int'l, International
 Inv, Investment
 Invst, Investment
+invest,Investment
 Ipc, IPC
 Ipf, IPF
 Irr, Irrigation
@@ -434,6 +436,7 @@ TNL,TNL
 Ostep, O Step
 SOC, SOC
 Managment,Management
+Mgmt, Management
 IMBA,IMBA
 XYZ,XYZ
 TKD,TKD
@@ -464,3 +467,162 @@ FKG,FKG
 MGC,MGC
 CRC,CRC
 Vtec, V Tech
+TBS,TBS
+ALMCO,ALMCO
+EMKE,EMKE
+VIN,VIN
+FGI,FGI
+CH,CH
+CEPSA,CEPSA
+BVA,BVA
+BM,BM
+NEC,NEC
+ADB, ADB
+BVBA,BVBA
+ADOC,ADOC
+DAS,DAS
+MTU,MTU
+TMC,TMC
+VR,VR
+AR, AR
+IDC,IDC
+RS,RS
+RFM,RFM
+DCS,DCS
+ZM,ZM
+Rest, Restaurant
+MRF,MRF
+MJ,MJ
+CZC,CZC
+HKO,HKO
+AIMS,AIMS
+readymade, Ready Made
+ARA,ARA
+OVM,OVM
+FIJ,FIJ
+ARC,ARC
+AZ,AZ
+ES,ES
+CBRE,CBRE
+CB,CB
+SSIT,SSIT
+QBE,QBE
+TVM,TVM
+ET,ET
+Shaikha,Sheikha
+ISCF,ISCF
+MB,MB
+PP,PP
+TMJ,TMJ
+ATMM,ATMM
+YG,YG
+OK,OK
+TP,TP
+MP,MP
+ASSR,ASSR
+GSL,GSL
+KSP,KSP
+MAK,MAK
+CDR,CDR
+HDR,HDR
+DSR,DSR
+JMS,JMS
+KTL,KTL
+LPA,LPA
+AAA,AAA
+NDT,NDT
+DSR,DSR
+IMI,IMI
+BKC,BKC
+LTA,LTA
+MMJ,MMJ
+AGM,AGM
+CIC,CIC
+DCS,DCS
+SHL,SHL
+JIU,JIU
+LS,LS
+OMV,OMV
+CGL,CGL
+CBRN,CBRN
+Cafetria, Cafeteria
+Cafetaria, Cafeteria
+SNC,SNC
+TS,TS
+NMK,NMK
+CMI,CMI
+EO,EO
+ICL,ICL
+GCC,GCC
+Enginering,Engineering
+LOC,LOC
+HAK,HAK
+Buliding,Building
+ITC,ITC
+GEA,GEA
+HSB,HSB
+AM,AM
+MOZ,MOZ
+GIFL,GIFL
+Machineries,Machinery
+BS,BS
+JIT,JIT
+CSP,CSP
+TACS,TACS
+VAP,VAP
+Jumeira, Jumeirah
+TK,TK
+KMK,KMK
+HBZ,HBZ
+AMS,AMS
+MEP, MEP
+MCL,MCL
+KCI,KCI
+HK,HK
+JIN,JIN
+RRT,RRT
+ZXY,ZXY
+ZTE,ZTE
+NPL,NPL
+SNP,SNP
+PKF,PKF
+WWT,WWT
+SMKA,SMKA
+SOS,SOS
+GPC,GPC
+WPPA,WPPA
+SD,SD
+SSP,SSP
+KEO,KEO
+USGP,USGP
+KC,KC
+KFC,KFC
+AAW,AAW
+ICC,ICC
+AMOU,AMOU
+DS,DS
+SPC,SPC
+MGC,MGC
+TTC,TTC
+DDY,DDY
+CEM,CEM
+QM,QM
+BEL,BEL
+AIG,AIG
+EIC,EIC
+DSGS,DSGS
+DK,DK
+FKS,FKS
+RHL,RHL
+FNI,FNI
+CPG,CPG
+ABSG,ABSG
+JIC,JIC
+AKL,AKL
+ECS,ECS
+GRC,GRC
+GAC,GAC
+ARIB,ARIB
+EO,EO
+ASPPEC,ASPPEC
+FPB,FPB
