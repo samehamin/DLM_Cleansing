@@ -50,7 +50,7 @@ def pipeline_remove_abbrev(tokens):
                    'corpn', 'trdllc', 'trdest', 'indltd', 'llcc', 'equiptrest', 'contcollc', 
                    'servicesllc', 'llcbr', 'ltdd', 'contllc', 'eastfze', 'llco', 'lll',
                    'icd', 'tradg', 'fzer', 'sgj', 'llcons', 'bldconco', 'jlt',
-                   'jafza', 'tradin']
+                   'jafza', 'tradin', 'tradig','llllc']
         token = ' '.join([w for w in str(token).split() if w.lower() not in abbrevs_wrong])
 
         # capitalize token
@@ -79,7 +79,7 @@ def pipeline_remove_abbrev(tokens):
     tokens = [re.sub(r"(Ras Al Khaimah Branch).*$", '', token) for token in tokens]
     tokens = [re.sub(r"(Sharjah Branch).*$", '', token) for token in tokens]
     tokens = [re.sub(r"(Branch).*$", ' ', token) for token in tokens]
-    tokens = [re.sub(r"(Middle East)$", '', token) for token in tokens]
+    tokens = [re.sub(r"\s+(Middle East)\s+$", '', token) for token in tokens]
     tokens = [re.sub(r"(General Trading).*$", '', token) for token in tokens]
     tokens = [re.sub(r"(Trading).*$", '', token) for token in tokens]
     tokens = [re.sub(r"(General Maintenance)\s*$", '', token) for token in tokens]
@@ -93,6 +93,7 @@ def pipeline_remove_abbrev(tokens):
     tokens = [re.sub(r"(Sharjah).*$", '', token) for token in tokens]
     tokens = [re.sub(r"(Ajman).*$", '', token) for token in tokens]
     tokens = [re.sub(r"(DIB ATM).*$", '', token) for token in tokens]
+    tokens = [re.sub(r"\bHayper Market\b", 'Hypermarket', token) for token in tokens]
 
     return tokens
 
@@ -113,7 +114,7 @@ def pipeline_convert_numbers(tokens):
 def separate_al_char(tokens):
     exclude_al = ['ali', 'al', 'alarm', 'alia', 'alwan', 'aluminum', 'alaaeldin',
                   'alpha', 'allsa', 'almas', 'alif', 'almco', 'almamun', 'alam',
-                  'almiya', 'alexandriah', 'alfiah']
+                  'almiya', 'alexandriah', 'alfiah', 'all', 'albany', 'alalamain']
     
     for i in range(len(tokens)):
         token = tokens[i]
