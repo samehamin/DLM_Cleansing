@@ -10,7 +10,7 @@ DLM
 		done - Remove “Middle East” from the end of sentence regex “ \s+Middle East\s+$”
 		done - Engg -> Engineering
 		done - New rule: if branch is the last word, remove it.
-		New rule: Digits (G2 => G two)
+		done New rule: Digits (G2 => G two)
 	- Add the 1000 to DLM
 	done - Apply Clinton and Zaynab fixes to batch 1
 	done - Batch 3,4,5 40K ar today
