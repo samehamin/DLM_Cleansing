@@ -1,0 +1,13 @@
+Email: Finalizing DLM for all Use Cases Utterances
+
+Dear Sameh, Mahmoud,
+
+Please find in the attachments the list of the all the remaining utterances to be added to the DLM of 101 for all the remaining use cases/intents
+
+Please note that the same DLM used for 101 will be used for 8005800 so you’ll notice that some of the business related intents utterances are included here (the rationale behind this is to fulfil the business and consumer teams requirements to divert the intents designed specifically for one of them to the correct channel).
+
+
+==========================================
+
+To Mourugan
+Tell him that same file should be used for 101 and 8005800
