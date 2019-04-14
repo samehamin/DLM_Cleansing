@@ -11,9 +11,9 @@ import re
 def pipeline_read_file(exten, file = None, column = None):
     df = None
     if exten == 'csv':
-        df = pd.read_csv('data/' + file, encoding = 'utf-8')
+        df = pd.read_csv(file, encoding = 'utf-8')
     elif exten == 'excel':
-        df = pd.read_excel('data/' + file, column, encoding = 'utf-8')
+        df = pd.read_excel(file, column, encoding = 'utf-8')
     return df
 
 def pipeline_remove_duplicates_empty(tokens):
@@ -22,7 +22,7 @@ def pipeline_remove_duplicates_empty(tokens):
     return tokens
 
 def pipeline_remove_specials_spaces(tokens):
-    tokens = [ re.sub("[^\u0621-\u06FF]+", ' ', str(token)) for  token in tokens]
+    tokens = [ re.sub("[^\u0621-\u06FF0-9/]+", ' ', str(token)) for  token in tokens]
     tokens = [re.sub("[ۭ]+", ' ', token) for  token in tokens]
     tokens = [token.strip() for  token in tokens if len(token.strip()) > 1]
     return tokens
@@ -33,19 +33,6 @@ def pipeline_remove_abbrev(tokens):
         token = tokens[i]
         token = ' '.join([w for w in str(token).split() if len(w) > 1])
         tokens[i] = token
-    
-    # remove abbreviations
-    for i in range(len(tokens)):
-        token = tokens[i]
-        token = re.sub(" ذم ", ' ', token)
-        token = re.sub(" م ", ' ', token)
-        token = re.sub(" ار ", ' ', token)
-        token = re.sub(" هه ", ' ', token)
-        token = re.sub(" ش ذ م م ", ' ', token)
-        token = re.sub(" ش م ذ ", ' ', token)
-        token = re.sub(" ذ م م ", ' ', token)
-        
-        tokens[i] = token
 
     return tokens
     
@@ -53,24 +40,16 @@ def get_term_frequently(df):
     df = df['Entity Name'].str.split(expand=True).stack().value_counts()
     return df
 
-def export_to_file(exten, df, file_name):
-    if exten == 'excel':
-        writer = pd.ExcelWriter(file_name)
-        df.to_excel(writer,'Sheet1')
-        writer.save()
-    elif exten == 'csv':
-        df.to_csv(file_name, encoding='utf-8', index=False)
-
 #=====================================================================    
 # pipeline Start
 #=====================================================================
-source_file_name = '16_01_19_source_ar.csv'
+source_file_name = '101/all-ar.txt'
 
 # read the file
 data = pipeline_read_file('csv', source_file_name)
 data.describe()
 
-tokens = data['Entity Name'].values
+tokens = data['Utterances'].values
 
 # special charachters and spaces
 tokens = pipeline_remove_specials_spaces(tokens)
@@ -82,11 +61,23 @@ tokens = pipeline_remove_abbrev(tokens)
 tokens = pipeline_remove_duplicates_empty(tokens)
 
 
-data = pd.DataFrame({'Entity Name': tokens})
-data.head()
+data = pd.DataFrame({'Utterances': tokens})
+data.describe()
 
 # check term frequently 
-df_term_freq = get_term_frequently(data)
+#df_term_freq = get_term_frequently(data)
 
 # write the file
-export_to_file('csv', data, 'output/output_' + source_file_name)
+data.to_csv("101/all-ar-cleaned.txt", encoding='utf-8', index=False, header=False)
+
+
+#df = pd.read_csv("uc5+101-ar.txt", encoding = 'utf-8')
+## sorting by first name 
+#df.sort_values("Utterances", inplace = True) 
+#  
+## dropping ALL duplicte values 
+#df = df.drop_duplicates(subset ="Utterances") 
+#  
+## displaying data 
+#df.describe()
+#df.to_csv("uc5+101-ar-cleaned.txt", encoding='utf-8', index=False, header=False)
