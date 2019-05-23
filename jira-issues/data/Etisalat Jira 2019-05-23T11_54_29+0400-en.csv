@@ -2266,7 +2266,7 @@ AVAT-644,97855,Customer asked two questions (What package do i have & what is my
 
 <p style=""margin-right: 0in; margin-bottom: 8pt; margin-left: 0in;""><span style=""font-size: medium;""><span style=""font-family: calibri;"">VA did not recognize customer requirement </span></span></p>
 ",,
-AVAT-642,97841,customer asked to pay VA recognized as Hello! I am your virtual assistant from Etisalat. You could try something like: • What's my outstanding amount? • How do I update my Emirates ID? • How do I pay my bills?,,"<p>Conversation ID: c01fec5a9b34_b6b62ab0-56b2-11e9-816c-c72922726daa<br>
+AVAT-642,97841,customer asked to pay VA recognized as Hello! I am your virtual assistant from Etisalat. You could try something like: • What's my outstanding amount? • How do I update my Emirates ID? • How do I pay my bills?	,"<p>Conversation ID: c01fec5a9b34_b6b62ab0-56b2-11e9-816c-c72922726daa<br>
 &nbsp;<br>
 EDUID: 5ca5bea3000000000a25a76723410002<br>
 Account Number: Guest<br>
@@ -2297,7 +2297,7 @@ customer asked to pay VA recognized as Hello! I am your virtual assistant from E
 <p>&nbsp;</p>
 
 <p>&nbsp;</p>
-",
+",,
 AVAT-641,97837,customer asked for pay VA recognized as I didn't get that,"<p>customer asked for pay VA recognized as I didn't get that</p>
 
 <p>Conversation ID: 18e05e292a4c_e59c4b20-56b7-11e9-b7d9-119e9ece6914</p>
@@ -2371,7 +2371,7 @@ Account Number:0508631029<br>
 
 <p>&nbsp;</p>
 ",,
-AVAT-633,97792,customer asked for what is your favorite color ? VA recognized as  color ?,I didn't get that. ,"<p><br>
+AVAT-633,97792,customer asked for what is your favorite color ? VA recognized as  color ?	I didn't get that. ,"<p><br>
 Conversation ID: b56435540c84_6cae8ec0-5465-11e9-aad1-f925155e5d76<br>
 EDUID: 5ca1e1fb000000000a25a76723410002<br>
 Account Number:0504886688<br>
@@ -2398,7 +2398,7 @@ Account Number:0504886688<br>
 <p>&nbsp;</p>
 
 <p></p>
-",
+",,
 AVAT-632,97739,customer asked to update emrites ID VA recgnized as update me the same,"<p>customer asked to update emrites ID VA recgnized as update me the same</p>
 
 <p>onversation ID: 5217cb3ebbf0_3e266040-5475-11e9-9bde-63660ec25725</p>
@@ -8022,4 +8022,3 @@ Account Number: 067144403</p>
 
 <p>&nbsp;</p>
 ",,
-,,,,,17
